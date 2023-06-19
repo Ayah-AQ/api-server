@@ -4,8 +4,7 @@
 
 const express = require('express');
 const {Clothes}=  require('../models/index')
-const router = express.Router(); // we use it for creating a (HTTP) methods (get,update,..)
-
+const router = express.Router();
 
 router.post('/clothes', createClothesInstance);
 router.get ('/clothes', findAllClothesRecords)

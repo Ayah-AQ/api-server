@@ -8,6 +8,12 @@ const food = (sequelize,DataTypes)=> sequelize.define('FOOD', {
     },
 color: {
     type:  DataTypes.STRING
+},
+size: {
+  type: DataTypes.STRING
+},
+description:{
+  type: DataTypes.STRING
 }
 });
 

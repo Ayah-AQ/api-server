@@ -13,8 +13,8 @@ const clothes = (sequelize, DataTypes) => sequelize.define('Clothes', {
   FabricName: {
     type: DataTypes.STRING
   },
-  stretchability:{
-    type: DataTypes.STRING //Medium
+  description:{
+    type: DataTypes.STRING
   }
 })
 
