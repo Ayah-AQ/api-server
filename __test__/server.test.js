@@ -56,5 +56,70 @@ describe('test server', () => {
         const res = await muke.delete('/food/1')
         expect(res.status).toBe(204);
     })
-
+// --------------------------
+    it('post recipie', async () => {
+        const res = await muke.post('/recipie').send({
+          name: 'mansaf',
+          recipie: 'Jameed', 
+        });
+        const createdRecipie = JSON.parse(res.text);
+        expect(res.status).toBe(201);
+        expect(createdRecipie.name).toEqual('mansaf')
+      });
+      
+      it('get all ingredients', async () => {
+        const res = await muke.get('/recipie'); 
+        expect(res.status).toBe(200);
+      });
+      
+      it('get recipie by id', async () => { 
+        const res = await muke.get('/recipie/1');
+        expect(res.status).toBe(200);
+      });
+      
+      it('update recipie', async () => {
+        const res = await muke.put('/recipie/1').send({
+          name: 'magluba', 
+          recipie: 'eggplanet',
+        });
+        expect(res.status).toBe(202); 
+      });
+      
+      it('delete recipie', async () => { 
+        const res = await muke.delete('/recipie/1');
+        expect(res.status).toBe(204);
+      });
+    //   ---------------------
+      it('post ingredient', async () => {
+        const res = await muke.post('/ingredient').send({
+          name: 'mansaf',
+          ingredients: 'Jameed', 
+        });
+        const createdIngredient = JSON.parse(res.text);
+        expect(res.status).toBe(201);
+        expect(createdIngredient.ingredients).toEqual('Jameed')
+      });
+      
+      it('get all ingredients', async () => {
+        const res = await muke.get('/ingredient'); 
+        expect(res.status).toBe(200);
+      });
+      
+      it('get ingredient by id', async () => { 
+        const res = await muke.get('/ingredient/1');
+        expect(res.status).toBe(200);
+      });
+      
+      it('update ingredient', async () => {
+        const res = await muke.put('/ingredient/1').send({
+          name: 'magluba', 
+          ingredient: 'eggplanet',
+        });
+        expect(res.status).toBe(202); 
+      });
+      
+      it('delete ingredient', async () => { 
+        const res = await muke.delete('/ingredient/1');
+        expect(res.status).toBe(204);
+      });
 })
