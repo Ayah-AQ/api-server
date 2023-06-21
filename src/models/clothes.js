@@ -1,4 +1,3 @@
-// containing the schema for the clothes table
 'use strict'
 
 
