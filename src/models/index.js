@@ -13,11 +13,7 @@ let sequelizeOptions = process.env.NODE_ENV === 'production' ? {
     }
   } : {}
 
-  let sequelize = new Sequelize(DB_URL, sequelizeOptions); //taking the data base which is in our case (DB_URL), and the options(sequelizeOptions)
-  // new instense from Sequelize (from the Sequelize package itself so we require it)
-
-  // how to build the schema or the table? first by having the model requiered in a varable
-  // then we will start build the schema inside it
+  let sequelize = new Sequelize(DB_URL, sequelizeOptions); 
 
   const clothes = require('./clothes')
   const food = require('./food')
